@@ -1,0 +1,1 @@
+in this file yo can find commands of the shell
