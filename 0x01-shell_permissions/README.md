@@ -1,0 +1,1 @@
+This file teach you about the shell permissions in linux, RWX and group owner
