@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# create a Private and Public key pair
+ssh-keygen -b 4096 -t rsa -N betty -f holberton
