@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Fixing issue and set up apache
-service apache2 restart
+service apache2 start
