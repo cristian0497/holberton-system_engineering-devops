@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # confirgure the redirection of Nginx
-sudo -y apt-get update
-sudo -y apt-get install nginx
-sed -i '46 i \\trewrite ^/redirect_me http://www.cristiandiaz.com permanent;' /etc/nginx/sites-available/default
-service nginx restart
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo sed -i '46 i \\trewrite ^/redirect_me http://www.cristiandiaz.com permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
