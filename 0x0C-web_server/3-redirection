@@ -2,5 +2,6 @@
 # confirgure the redirection of Nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
 sudo sed -i '46 i \\trewrite ^/redirect_me http://www.cristiandiaz.com permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
