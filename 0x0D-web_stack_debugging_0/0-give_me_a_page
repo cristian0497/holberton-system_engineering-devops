@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+# Fixing issue and set up apache
+sudo apache2 start
