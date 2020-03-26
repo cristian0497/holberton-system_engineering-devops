@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Create a public and private key, with keygen ssh
-sudo ssh-keygen -f holberton -b 4096 -P betty
+ssh-keygen -b 4096 -P betty -f holberton
