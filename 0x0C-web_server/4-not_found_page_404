@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # Configure a 404 page bo found message
-apt-get -y update
-apt-get -y install nginx
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
-sed -i '45 i \\terror_page 404 /404.html;' /etc/nginx/sites-available/default
-service nginx restart
+apt-get update -y
+apt-get install nginx -y
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/cristian0497 permanent;"
+string2="\n\terror_page 404 \/404.html;"
+sed -i "s/server_name _;/$string$string2/" /etc/nginx/sites-enabled/default
+service nginx start
