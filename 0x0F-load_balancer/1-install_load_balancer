@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# config to server HAproxy
+apt-get update -y
+apt-get install haproxy -y
+echo "frontend holbnbclone
+                 bind *:80
+                 default backend servers
+" >> /etc/haproxy/haproxy.cfg
+
+echo "backend servers
+                balance roundrobin
+                server 1185-web-01 35.237.97.231:80
+                server 1185-web_01 18.234.148.75
+" >> /etc/haproxy/haproxy.cfg
+
+service haproxy restart
