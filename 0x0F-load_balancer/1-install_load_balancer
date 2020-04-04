@@ -4,7 +4,7 @@ apt-get update -y
 apt-get install haproxy -y
 echo "frontend holbnbclone
                  bind *:80
-                 default backend servers
+                 default_backend servers
 " >> /etc/haproxy/haproxy.cfg
 
 echo "backend servers
