@@ -4,9 +4,8 @@ apt-get update -y
 apt-get install nginx -y
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/cristian0497 permanent;\n"
-string2="\terror_page 404 \/404.html;\n"
-string3="\tadd_header X-Served-By $hostname;\n"
+string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/cristian0497 permanent;"
+string2="\n\terror_page 404 \/404.html;"
+string3="\n\tadd_header X-Served-By: \$hostname;"
 sed -i "s/server_name _;/$string$string2$string3/" /etc/nginx/sites-enabled/default
-
 service nginx start
