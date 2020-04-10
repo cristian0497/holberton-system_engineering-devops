@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # run command with sudo permissions with other user
-sudo -S -u whoami "$1"
+sudo -u "$1" whoami
