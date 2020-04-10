@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# print the ls command
+My_list="$(ls)"
+for i in $My_list
+do
+    new=$(find "$i" | rev | cut -d '-' -f1 | rev)
+    echo "$new"
+done

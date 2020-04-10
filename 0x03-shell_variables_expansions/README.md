@@ -1,0 +1,1 @@
+in this folder, we talk about Shell variables

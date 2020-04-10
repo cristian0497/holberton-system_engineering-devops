@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# print mi own process id PID
+echo "$$"

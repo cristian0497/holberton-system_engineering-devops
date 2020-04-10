@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# print Holberton school 10 times, if is 4 print bad luck, if 8 good look
+x=1
+while [ $x -lt 11 ]
+do
+      if [ $x -eq 4 ]
+      then
+	echo "bad luck"
+      elif [ $x -eq 8 ]
+      then
+	  echo "good luck"
+      else
+	  echo "Holberton School"
+      fi
+      ((x++))
+done

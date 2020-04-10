@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# print 10 times "Holberton School" with until loop
+x=1
+until [ $x -gt 10 ]
+do
+	echo "Holberton School"
+	((x++))
+done

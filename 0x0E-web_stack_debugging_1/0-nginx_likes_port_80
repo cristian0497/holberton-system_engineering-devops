@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Set the correct config file to list request on port 80
+
+line1="\tlisten 80 default_server;"
+line2="\tlisten [::]:80 default_server ipv6only=on;"
+
+sed -i "21s/.*/$line1/" /etc/nginx/sites-enabled/default
+sed -i "22s/.*/$line2/" /etc/nginx/sites-enabled/default
+
+service nginx restart
+

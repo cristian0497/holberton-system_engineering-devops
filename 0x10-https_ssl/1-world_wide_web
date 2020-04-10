@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# World Wide Web dif command
+domain=$1
+if [ $# -eq 2 ]; then
+subdomain=$2
+str="${subdomain}.${domain}"
+rec_type=$(dig "$str" | grep -A1 'ANSWER SECTION:' | grep IN | awk '{print $4}')
+dest=$(dig "$str" | grep -A1 'ANSWER SECTION:' | grep IN | awk '{print $5}')
+echo "The subdomain ${subdomain} is a ${rec_type} record and points to ${dest}"
+fi
+if [ $# -eq 1 ]; then
+for item in www lb-01 web-01 web-02
+do
+str="${item}.${domain}"
+rec_type=$(dig "$str" | grep -A1 'ANSWER SECTION:' | grep IN | awk '{print $4}')
+dest=$(dig "$str" | grep -A1 'ANSWER SECTION:' | grep IN | awk '{print $5}')
+echo "The subdomain ${item} is a ${rec_type} record and points to ${dest}"
+done
+fi

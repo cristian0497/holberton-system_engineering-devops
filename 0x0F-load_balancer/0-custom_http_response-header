@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# config two servers
+apt-get update -y
+apt-get install nginx -y
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+string="server {\n\tserver_name_;\n\trewrite ^\/redirect_me https:\/\/github.com\/cristian0497 permanent;"
+string2="\n\terror_page 404 \/404.html;"
+string3="\n\tadd_header X-Served-By \$hostname;"
+sed -i "s/server {/$string$string2$string3/" /etc/nginx/sites-enabled/default
+service nginx start
