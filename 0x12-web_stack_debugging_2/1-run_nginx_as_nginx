@@ -3,4 +3,4 @@
 sudo chmod a+rwx /etc/nginx/nginx.conf
 sudo killall apache2
 sudo sed -i "s/89/8080/" /etc/nginx/sites-enabled/default
-sudo -u nginx services nginx start
+sudo -u nginx service nginx start
