@@ -58,8 +58,8 @@ frontend holbnbclone_https
 backend servers
         balance roundrobin
 	redirect scheme https if !{ ssl_fc }
-        server 1185-web-01 35.237.97.231:80 check
-        server 1185-web_02 18.234.148.75:80 check
+        server 1185-web-01 34.73.6.26:80 check
+        server 1185-web_02 35.227.39.47:80 check
 	# option httpchk
 	
 backend letsencrypt-backend
