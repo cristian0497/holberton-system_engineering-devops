@@ -3,6 +3,6 @@
 dia="$(date +%d)"
 mes="$(date +%m)"
 year="$(date +%Y)"
-mysqldump -u root -p "$2" --all-databases --opt > backup.sql
+mysqldump -uroot -p="$1" --all-databases --opt > backup.sql
 tar -czvf "$dia-$mes-$year.tar.gz" backup.sql
 
