@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ JSON Plcae Holder request """
 import json
-import urllib.request
 import sys
+import urllib.request
 
 
 def main():
