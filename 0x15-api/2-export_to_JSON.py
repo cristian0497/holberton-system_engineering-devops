@@ -2,17 +2,19 @@
 """ JSON Plcae Holder request """
 import csv
 import json
-import urllib.request
 import sys
+import urllib.request
 
 
 def main():
     """ Main method to does a request and return a JSON file """
-    users_url = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
+    users_url = "https://jsonplaceholder.typicode.com/users/{}".format(
+        sys.argv[1])
     with urllib.request.urlopen(users_url) as Users:
         users = Users.read().decode('utf-8')
         users_dic = json.loads(users)
-    users_url = "https://jsonplaceholder.typicode.com/todos/?userId={}".format(sys.argv[1])
+    users_url = "https://jsonplaceholder.typicode.com/todos/?userId={}".format(
+        sys.argv[1])
     with urllib.request.urlopen(users_url) as ToDos:
         list_task = []
         todos = ToDos.read().decode('utf-8')
