@@ -27,7 +27,7 @@ def main():
                 if item.get('userId') == user_dic.get('id'):
                     new_dic['username'] = user_dic.get('username')
                     new_dic['task'] = item.get('title')
-                    new_dic['complete'] = item.get('completed')
+                    new_dic['completed'] = item.get('completed')
                     new_list.append(new_dic)
             return_dic[user_dic.get('id')] = new_list
         json.dump(return_dic, file_json)
