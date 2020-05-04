@@ -27,7 +27,7 @@ def main():
 
     user_name = users_dic.get('name')
     all_task = len(todos_dic)
-    print('Employee {} is done with task({}/{}):'.format
+    print('Employee {} is done with tasks({}/{}):'.format
           (user_name, done_task, all_task))
     for task in list_task:
         print("\t {}".format(task))
