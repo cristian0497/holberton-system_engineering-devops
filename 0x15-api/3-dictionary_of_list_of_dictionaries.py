@@ -2,8 +2,8 @@
 """ JSON Plcae Holder request """
 import csv
 import json
-import urllib.request
 import sys
+import urllib.request
 
 
 def main():
