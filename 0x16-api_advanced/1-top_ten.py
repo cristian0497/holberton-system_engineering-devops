@@ -17,6 +17,7 @@ def top_ten(subreddit):
         data = child.get('data')
         result.append(data.get('title'))
     if len(result) != 0:
-        print(result)
+        for val in result:
+            print(val)
     else:
         print(None)
