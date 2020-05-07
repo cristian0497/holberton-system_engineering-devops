@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" API advanced request """
 import requests
 
 
@@ -9,6 +10,6 @@ def number_of_subscribers(subreddit):
     try:
         res = requests.get(base_url, headers=data,
                            allow_redirects=False).json()
-        return(res.get('data').get('subscribers'))
+        return(int(res.get('data').get('subscribers')))
     except:
         return 0
