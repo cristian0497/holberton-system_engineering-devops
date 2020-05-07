@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
     data = {'user-agent': 'Scrap/0.0.1'}
     try:
         res = requests.get(base_url, headers=data,
-                           allow_redirects=False).json():
+                           allow_redirects=False).json()
         return(int(res.get('data').get('subscribers')))
     except:
         return 0
