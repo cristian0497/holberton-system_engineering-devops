@@ -9,12 +9,14 @@ def top_ten(subreddit):
     url = 'https://www.reddit.com/subreddits/search.json'
     par = {'q': subreddit, 'sort': 'relevance', 'limit': 10}
     data = {'user-agent': 'scraping-0.0.2'}
-    try:
-        res = requests.get(url, headers=data, params=par,
-                           allow_redirects=False).json()
-        query = res.get('data').get('children')
-        for child in query:
-            data = child.get('data')
-            print(data.get('title'))
-    except:
-        return None
+    res = requests.get(url, headers=data, params=par,
+                       allow_redirects=False).json()
+    query = res.get('data').get('children')
+    result = []
+    for child in query:
+        data = child.get('data')
+        result.append(data.get('title'))
+    if len(result) != 0:
+        print(result)
+    else:
+        print(None)
