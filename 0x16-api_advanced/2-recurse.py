@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+""" A full request with recursion to reddit API"""
 import requests
 
 
-def recurse(subreddit, hot_list=[], after='', cont=0):
+def recurse(subreddit, hot_list=[], after=''):
     """recursive with request to the API """
     url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
         subreddit, after)
@@ -15,10 +16,8 @@ def recurse(subreddit, hot_list=[], after='', cont=0):
         for child in query:
             data = child.get('data').get('title')
             hot_list.append(data)
-            cont += 1
         if after is None:
             return(hot_list)
-        return(recurse(subreddit, hot_list, after, cont))
-
+        return(recurse(subreddit, hot_list, after))
     except:
         return(None)
