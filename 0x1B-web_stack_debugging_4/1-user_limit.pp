@@ -2,5 +2,5 @@
 
 exec { 'Change Limit config':
 command => 'sed -i "s/holberton/# holberton/g" /etc/security/limits.conf',
-path "/bin/bash",
+path    => '/usr/bin',
 }
