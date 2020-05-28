@@ -1,14 +1,10 @@
 # script to add more worker process to nginx .conf file and restart service
 
-exec { 'nginx stop':
-command => 'service nginx stop',
-path    => '/usr/bin/',
-}
 exec { 'sed command':
-command => 'sudo sed -i 's/worker_processes [0-9]/worker_processes 10/' /etc/nginx/nginx.conf',
+command => 'sudo sed -i "5 s/[0-9]\+/$(ulimit -n)/" /etc/default/nginx',
 path    => ['/usr/bin/', '/usr/sbin'],
 }
-exec { 'nginx start':
-command => 'sudo service nginx start',
+exec { 'nginx restart':
+command => 'sudo service nginx restart',
 path    => '/usr/bin/',
 }
